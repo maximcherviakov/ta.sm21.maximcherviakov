@@ -356,15 +356,87 @@ tc_20_1TestCase
     Input Text    //input[@name='j_username']    TestUser11
     Input Password    //input[@name='j_password']    Password11+
     Click Button    //input[@type='submit']
-    Click Element    //*[@id="inventory"]/a
+    Click Element    xpath=//div[@id='inventory']/a
     Click Element    //*[@id="j_idt76:tabView:j_idt89_data"]/tr/td/a[.='TestCountry']
     Click Element    //*[@id="j_idt76:tabView:j_idt109_data"]/tr/td/a[.='TestCity']
     Click Element    //*[@id="j_idt76:tabView:j_idt109_data"]/tr/td/a[.='TestBuilding']
-    Click Element    //*[@id="table_header"]/table/tbody/tr/td[1]/a
+    Click Element    //*[@id="table_header"]/table/tbody/tr/td[1]
     Input Text    //*[@id="j_idt74:number"]    1
     Input Text    //*[@id="j_idt74:square"]    800
     Capture Page Screenshot    tc_20_1TestCase(1).png
     Click Element    //*[@id="table_header"]/table/tbody/tr/td[1]/input
     Capture Page Screenshot    tc_20_1TestCase(2).png
     Wait Until Page Contains    Floor with such Name/Number already exists.
+    Close Browser
+
+tc_21_1TestCase
+    Open Browser    https://inventory.edu-netcracker.com/login.jsp    chrome
+    Input Text    //input[@name='j_username']    TestUser11
+    Input Password    //input[@name='j_password']    Password11+
+    Click Button    //input[@type='submit']
+    Click Element    //*[@id="inventory"]/a
+    Click Link    link=TestCountry
+    Click Link    link=TestCity
+    Click Link    link=TestBuilding
+    Click Link    link=Post Terminal (s)
+    Sleep    0.5
+    Execute Javascript    document.querySelectorAll("#table_header > table > tbody > tr > td:nth-child(1) > a").item(1).click();
+    Input Text    //*[@id="j_idt74:name"]    TestPosTerminal
+    Input Text    //*[@id="j_idt74:width"]    100
+    Input Text    //*[@id="j_idt74:length"]    100
+    Input Text    //*[@id="j_idt74:height"]    100
+    Select From List By Value    //*[@id="j_idt74:physicalStatus"]    Planned
+    Click Element    //*[@id="table_data"]/table/tbody/tr[6]/td/a[1]
+    @{windows}=    Get Window Titles
+    Sleep    1
+    Select Window    @{windows}[1]
+    Click Element    //li[@role='treeitem']/span/span/a[contains(text(),'TestCountry')]/../../span[@class='ui-tree-toggler ui-icon ui-icon-triangle-1-e']
+    Sleep    0.5
+    Click Element    //li[@role='treeitem']/span/span/a[contains(text(), 'TestCity')]/../../span[@class='ui-tree-toggler ui-icon ui-icon-triangle-1-e']
+    Sleep    0.5
+    Click Element    //li[@role='treeitem']/span/span/a[contains(text(), 'TestBuilding')]
+    Click Element    //*[@id="OK"]
+    Select Window    @{windows}[0]
+    Click Element    //*[@id="table_header"]/table/tbody/tr/td[1]/input
+    Element Should Contain    //*[@id="table_data"]/table/tbody/tr[1]/td    TestPosTerminal
+    Element Should Contain    //*[@id="table_data"]/table/tbody/tr[2]/td    POS Term
+    Element Should Contain    //*[@id="table_data"]/table/tbody/tr[7]/td    100
+    Element Should Contain    //*[@id="table_data"]/table/tbody/tr[8]/td    100
+    Element Should Contain    //*[@id="table_data"]/table/tbody/tr[9]/td    100
+    Element Should Contain    //*[@id="table_data"]/table/tbody/tr[10]/td    Planned
+    Element Should Contain    //*[@id="table_data"]/table/tbody/tr[11]/td/a    Building: TestBuilding
+    Close Browser
+
+tc_22_1TestCase
+    Open Browser    https://inventory.edu-netcracker.com/login.jsp    chrome
+    Input Text    //input[@name='j_username']    TestUser11
+    Input Password    //input[@name='j_password']    Password11+
+    Click Button    //input[@type='submit']
+    Click Element    //*[@id="inventory"]/a
+    Click Link    link=TestCountry
+    Click Link    link=TestCity
+    Click Link    link=TestBuilding
+    Click Link    link=Post Terminal (s)
+    Sleep    0.5
+    Execute Javascript    document.querySelectorAll("#table_header > table > tbody > tr > td:nth-child(1) > a").item(1).click();
+    Input Text    //*[@id="j_idt74:name"]    TestPosTerminalFail
+    Input Text    //*[@id="j_idt74:width"]    0
+    Input Text    //*[@id="j_idt74:length"]    0
+    Input Text    //*[@id="j_idt74:height"]    0
+    Select From List By Value    //*[@id="j_idt74:physicalStatus"]    Planned
+    Click Element    //*[@id="table_data"]/table/tbody/tr[6]/td/a[1]
+    @{windows}=    Get Window Titles
+    Sleep    1
+    Select Window    @{windows}[1]
+    Click Element    //li[@role='treeitem']/span/span/a[contains(text(),'TestCountry')]/../../span[@class='ui-tree-toggler ui-icon ui-icon-triangle-1-e']
+    Sleep    0.5
+    Click Element    //li[@role='treeitem']/span/span/a[contains(text(), 'TestCity')]/../../span[@class='ui-tree-toggler ui-icon ui-icon-triangle-1-e']
+    Sleep    0.5
+    Click Element    //li[@role='treeitem']/span/span/a[contains(text(), 'TestBuilding')]
+    Click Element    //*[@id="OK"]
+    Select Window    @{windows}[0]
+    Click Element    //*[@id="table_header"]/table/tbody/tr/td[1]/input
+    Wait Until Page Contains    POS Terminal's width should be more than 0.
+    Wait Until Page Contains    POS Terminal's length should be more than 0.
+    Wait Until Page Contains    POS Terminal's height should be more than 0.
     Close Browser
