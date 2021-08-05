@@ -4,11 +4,8 @@ Library           Selenium2Library
 *** Test Cases ***
 tc_1_1TestCase
     Open Browser    https://inventory.edu-netcracker.com/pages/registration.xhtml    chrome
-    Input Text    //input[@id='registerForm:username']    TestAdminUser11
-    Input Password    //input[@id='registerForm:password']    Password11+
-    Input Password    //input[@id='registerForm:confirmPassword']    Password11+
-    Input Text    //input[@id='registerForm:email']    TestAdminUser11@test.com
-    Select From List By Value    //select[@id='registerForm:role']    Admin
+    ${currentTime}=    Get Time    sec
+    EnterRegistrationData    TestAdminUser${currentTime}    Password11+    TestAdminUser${currentTime}@test.com    Admin
     Capture Page Screenshot    tc_1_1TestCase(1).png
     Click Button    //input[@type='submit']
     Wait Until Page Contains    You have successfully registered    10s
@@ -17,10 +14,9 @@ tc_1_1TestCase
 
 tc_2_1TestCase
     Open Browser    https://inventory.edu-netcracker.com/pages/registration.xhtml    chrome
-    Input Text    //input[@id='registerForm:username']    TestUser21
-    Input Password    //input[@id='registerForm:password']    Password21+
-    Input Password    //input[@id='registerForm:confirmPassword']    Password21+
-    Input Text    //input[@id='registerForm:email']    TestUser21@test.com
+    ${currentTime}=    Get Time    sec
+    Set Global Variable    ${time}    ${currentTime}
+    EnterRegistrationData    TestUser${time}    Password21+    TestUser${time}@test.com    Admin
     Capture Page Screenshot    tc_2_1TestCase(1).png
     Click Button    //input[@type='submit']
     Wait Until Page Contains    You have successfully registered    10s
@@ -29,10 +25,7 @@ tc_2_1TestCase
 
 tc_2_2TestCase
     Open Browser    https://inventory.edu-netcracker.com/pages/registration.xhtml    chrome
-    Input Text    //input[@id='registerForm:username']    TestUser21
-    Input Password    //input[@id='registerForm:password']    Password21+
-    Input Password    //input[@id='registerForm:confirmPassword']    Password21+
-    Input Text    //input[@id='registerForm:email']    TestUser21@test.com
+    EnterRegistrationData    TestUser${time}    Password21+    TestUser${time}@test.com    Admin
     Capture Page Screenshot    tc_2_2TestCase(1).png
     Click Button    //input[@type='submit']
     Wait Until Page Contains    User with such login already exists    10s
@@ -41,10 +34,7 @@ tc_2_2TestCase
 
 tc_2_3TestCase
     Open Browser    https://inventory.edu-netcracker.com/pages/registration.xhtml    chrome
-    Input Text    //input[@id='registerForm:username']    Test3
-    Input Password    //input[@id='registerForm:password']    Password23+
-    Input Password    //input[@id='registerForm:confirmPassword']    Password23+
-    Input Text    //input[@id='registerForm:email']    Test3@test.com
+    EnterRegistrationData    Test3    Password23+    Test3@test.com    Admin
     Capture Page Screenshot    tc_2_3TestCase(1).png
     Click Button    //input[@type='submit']
     Wait Until Page Contains    Please fill out the form once again    10s
@@ -53,10 +43,7 @@ tc_2_3TestCase
 
 tc_3_1TestCase
     Open Browser    https://inventory.edu-netcracker.com/pages/registration.xhtml    chrome
-    Input Text    //input[@id='registerForm:username']    TestUser31
-    Input Password    //input[@id='registerForm:password']    Pass31
-    Input Password    //input[@id='registerForm:confirmPassword']    Pass31
-    Input Text    //input[@id='registerForm:email']    TestUser31@test.com
+    EnterRegistrationData    TestUser31    Pass31    TestUser31@test.com    Admin
     Capture Page Screenshot    tc_3_1TestCase(1).png
     Click Button    //input[@type='submit']
     Wait Until Page Contains    Please fill out the form once again    10s
@@ -65,10 +52,7 @@ tc_3_1TestCase
 
 tc_3_2TestCase
     Open Browser    https://inventory.edu-netcracker.com/pages/registration.xhtml    chrome
-    Input Text    //input[@id='registerForm:username']    TestUser32
-    Input Password    //input[@id='registerForm:password']    MyPassword+
-    Input Password    //input[@id='registerForm:confirmPassword']    MyPassword+
-    Input Text    //input[@id='registerForm:email']    TestUser32@test.com
+    EnterRegistrationData    TestUser32    MyPassword+    TestUser32@test.com    Admin
     Capture Page Screenshot    tc_3_2TestCase(1).png
     Click Button    //input[@type='submit']
     Wait Until Page Contains    Please fill out the form once again    10s
@@ -77,10 +61,7 @@ tc_3_2TestCase
 
 tc_3_3TestCase
     Open Browser    https://inventory.edu-netcracker.com/pages/registration.xhtml    chrome
-    Input Text    //input[@id='registerForm:username']    TestUser33
-    Input Password    //input[@id='registerForm:password']    password33+
-    Input Password    //input[@id='registerForm:confirmPassword']    password33+
-    Input Text    //input[@id='registerForm:email']    TestUser33@test.com
+    EnterRegistrationData    TestUser33    password33+    TestUser33@test.com    Admin
     Capture Page Screenshot    tc_3_3TestCase(1).png
     Click Button    //input[@type='submit']
     Wait Until Page Contains    Please fill out the form once again    10s
@@ -89,10 +70,7 @@ tc_3_3TestCase
 
 tc_3_4TestCase
     Open Browser    https://inventory.edu-netcracker.com/pages/registration.xhtml    chrome
-    Input Text    //input[@id='registerForm:username']    TestUser34
-    Input Password    //input[@id='registerForm:password']    MyPassword34
-    Input Password    //input[@id='registerForm:confirmPassword']    MyPassword34
-    Input Text    //input[@id='registerForm:email']    TestUser34@test.com
+    EnterRegistrationData    TestUser34    MyPassword34    TestUser34@test.com    Admin
     Capture Page Screenshot    tc_3_4TestCase(1).png
     Click Button    //input[@type='submit']
     Wait Until Page Contains    Please fill out the form once again    10s
@@ -101,10 +79,7 @@ tc_3_4TestCase
 
 tc_4_1TestCase
     Open Browser    https://inventory.edu-netcracker.com/pages/registration.xhtml    chrome
-    Input Text    //input[@id='registerForm:username']    TestUser451
-    Input Password    //input[@id='registerForm:password']    MyPassword451+
-    Input Password    //input[@id='registerForm:confirmPassword']    MyPassword451+
-    Input Text    //input[@id='registerForm:email']    TestUser451@test.com
+    EnterRegistrationData    TestUser451    MyPassword451+    TestUser451@test.com    Admin
     Capture Page Screenshot    tc_4_1TestCase(1).png
     ${showPassword}=    Get Element Attribute    xpath=//input[@id='registerForm:hide']@onclick
     Should Be Equal    ${showPassword}    showPassword(this.form)
@@ -112,10 +87,7 @@ tc_4_1TestCase
 
 tc_5_1TestCase
     Open Browser    https://inventory.edu-netcracker.com/pages/registration.xhtml    chrome
-    Input Text    //input[@id='registerForm:username']    TestUser451
-    Input Password    //input[@id='registerForm:password']    MyPassword451+
-    Input Password    //input[@id='registerForm:confirmPassword']    MyPassword451+
-    Input Text    //input[@id='registerForm:email']    TestUser451@test.com
+    EnterRegistrationData    TestUser451    MyPassword451+    TestUser451@test.com    Admin
     Click Element    //input[@id='registerForm:hide']
     Capture Page Screenshot    tc_5_1TestCase(1).png
     ${showPassword}=    Get Element Attribute    xpath=//input[@id='registerForm:hide']@onclick
@@ -124,10 +96,7 @@ tc_5_1TestCase
 
 tc_6_1TestCase
     Open Browser    https://inventory.edu-netcracker.com/pages/registration.xhtml    chrome
-    Input Text    //input[@id='registerForm:username']    TestUser61
-    Input Password    //input[@id='registerForm:password']    MyPassword61+
-    Input Password    //input[@id='registerForm:confirmPassword']    MyPassword61+
-    Input Text    //input[@id='registerForm:email']    TestUser61test.com
+    EnterRegistrationData    TestUser61    MyPassword61+    TestUser61test.com    Admin
     Capture Page Screenshot    tc_6_1TestCase(1).png
     Click Button    //input[@type='submit']
     Wait Until Page Contains    Please fill out the form once again    10s
@@ -136,10 +105,7 @@ tc_6_1TestCase
 
 tc_6_2TestCase
     Open Browser    https://inventory.edu-netcracker.com/pages/registration.xhtml    chrome
-    Input Text    //input[@id='registerForm:username']    TestUser62
-    Input Password    //input[@id='registerForm:password']    MyPassword62+
-    Input Password    //input[@id='registerForm:confirmPassword']    MyPassword62+
-    Input Text    //input[@id='registerForm:email']    TestUser62@testcom
+    EnterRegistrationData    TestUser62    MyPassword62+    TestUser62@testcom    Admin
     Capture Page Screenshot    tc_6_2TestCase(1).png
     Click Button    //input[@type='submit']
     Wait Until Page Contains    Please fill out the form once again    10s
@@ -148,10 +114,7 @@ tc_6_2TestCase
 
 tc_6_3TestCase
     Open Browser    https://inventory.edu-netcracker.com/pages/registration.xhtml    chrome
-    Input Text    //input[@id='registerForm:username']    TestUser63
-    Input Password    //input[@id='registerForm:password']    MyPassword63+
-    Input Password    //input[@id='registerForm:confirmPassword']    MyPassword63+
-    Input Text    //input[@id='registerForm:email']    Test$User+63-@test.com
+    EnterRegistrationData    TestUser63    MyPassword63+    Test$User+63-@test.com    Admin
     Capture Page Screenshot    tc_6_3TestCase(1).png
     Click Button    //input[@type='submit']
     Wait Until Page Contains    Please fill out the form once again    10s
@@ -160,10 +123,9 @@ tc_6_3TestCase
 
 tc_10_1TestCase
     Open Browser    https://inventory.edu-netcracker.com/pages/registration.xhtml    chrome
-    Input Text    //input[@id='registerForm:username']    TestUser101
-    Input Password    //input[@id='registerForm:password']    MyPassword101+
-    Input Password    //input[@id='registerForm:confirmPassword']    MyPassword101+
-    Input Text    //input[@id='registerForm:email']    TestUser101@test.com
+    ${currentTime1}=    Get Time    sec
+    Set Global Variable    ${time1}    ${currentTime1}
+    EnterRegistrationData    TestUser${time1}    MyPassword101+    TestUser${time1}@test.com    Admin
     Capture Page Screenshot    tc_10_1TestCase(1).png
     Click Button    //input[@type='submit']
     Wait Until Page Contains    You have successfully registered    10s
@@ -172,13 +134,10 @@ tc_10_1TestCase
 
 tc_10_2TestCase
     Open Browser    https://inventory.edu-netcracker.com/pages/registration.xhtml    chrome
-    Input Text    //input[@id='registerForm:username']    TestUser101
-    Input Password    //input[@id='registerForm:password']    MyPassword101+
-    Input Password    //input[@id='registerForm:confirmPassword']    MyPassword101+
-    Input Text    //input[@id='registerForm:email']    TestUser101@test.com
+    EnterRegistrationData    TestUser${time1}    MyPassword101+    TestUser${time1}@test.com    Admin
     Capture Page Screenshot    tc_10_2TestCase(1).png
     Click Button    //input[@type='submit']
-    Wait Until Page Contains    The user with such email address has been already registered. Please fill out another email address    10s
+    Wait Until Page Contains    User with such login already exists.    10s
     Capture Page Screenshot    tc_10_2TestCase(2).png
     Close Browser
 
@@ -195,9 +154,7 @@ tc_11_1TestCase
 
 tc_12_1TestCase
     Open Browser    https://inventory.edu-netcracker.com/login.jsp    chrome
-    Input Text    //input[@name='j_username']    TestUser11
-    Input Password    //input[@name='j_password']    Password11+
-    Click Button    //input[@type='submit']
+    Login    TestUser11    Password11+
     Click Element    //*[@id="inventory"]/a
     ${title}=    Get Title
     Should Be Equal    ${title}    Inventory
@@ -206,9 +163,7 @@ tc_12_1TestCase
 
 tc_13_1TestCase
     Open Browser    https://inventory.edu-netcracker.com/login.jsp    chrome
-    Input Text    //input[@name='j_username']    TestUser11
-    Input Password    //input[@name='j_password']    Password11+
-    Click Button    //input[@type='submit']
+    Login    TestUser11    Password11+
     Click Element    //*[@id="inventory"]/a
     Click Element    //*[@id="table_header"]/table/tbody/tr/td[1]/a
     Input Text    //*[@id="j_idt74:name"]    TestCountry
@@ -226,9 +181,7 @@ tc_13_1TestCase
 
 tc_14_1TestCase
     Open Browser    https://inventory.edu-netcracker.com/login.jsp    chrome
-    Input Text    //input[@name='j_username']    TestUser11
-    Input Password    //input[@name='j_password']    Password11+
-    Click Button    //input[@type='submit']
+    Login    TestUser11    Password11+
     Click Element    //*[@id="inventory"]/a
     Click Element    //*[@id="j_idt76:tabView:j_idt89_data"]/tr/td/a[.='TestCountry']
     Click Element    //*[@id="table_header"]/table/tbody/tr/td[1]/a
@@ -248,9 +201,7 @@ tc_14_1TestCase
 
 tc_15_1TestCase
     Open Browser    https://inventory.edu-netcracker.com/login.jsp    chrome
-    Input Text    //input[@name='j_username']    TestUser11
-    Input Password    //input[@name='j_password']    Password11+
-    Click Button    //input[@type='submit']
+    Login    TestUser11    Password11+
     Click Element    //*[@id="inventory"]/a
     Click Element    //*[@id="j_idt76:tabView:j_idt89_data"]/tr/td/a[.='TestCountry']
     Click Element    //*[@id="table_header"]/table/tbody/tr/td[1]/a
@@ -265,9 +216,7 @@ tc_15_1TestCase
 
 tc_16_1TestCase
     Open Browser    https://inventory.edu-netcracker.com/login.jsp    chrome
-    Input Text    //input[@name='j_username']    TestUser11
-    Input Password    //input[@name='j_password']    Password11+
-    Click Button    //input[@type='submit']
+    Login    TestUser11    Password11+
     Click Element    //*[@id="inventory"]/a
     Click Element    //*[@id="j_idt76:tabView:j_idt89_data"]/tr/td/a[.='TestCountry']
     Click Element    //*[@id="j_idt76:tabView:j_idt109_data"]/tr/td/a[.='TestCity']
@@ -292,9 +241,7 @@ tc_16_1TestCase
 
 tc_17_1TestCase
     Open Browser    https://inventory.edu-netcracker.com/login.jsp    chrome
-    Input Text    //input[@name='j_username']    TestUser11
-    Input Password    //input[@name='j_password']    Password11+
-    Click Button    //input[@type='submit']
+    Login    TestUser11    Password11+
     Click Element    //*[@id="inventory"]/a
     Click Element    //*[@id="j_idt76:tabView:j_idt89_data"]/tr/td/a[.='TestCountry']
     Click Element    //*[@id="j_idt76:tabView:j_idt109_data"]/tr/td/a[.='TestCity']
@@ -312,9 +259,7 @@ tc_17_1TestCase
 
 tc_18_1TestCase
     Open Browser    https://inventory.edu-netcracker.com/login.jsp    chrome
-    Input Text    //input[@name='j_username']    TestUser11
-    Input Password    //input[@name='j_password']    Password11+
-    Click Button    //input[@type='submit']
+    Login    TestUser11    Password11+
     Click Element    //*[@id="inventory"]/a
     Click Element    //*[@id="j_idt76:tabView:j_idt89_data"]/tr/td/a[.='TestCountry']
     Click Element    //*[@id="j_idt76:tabView:j_idt109_data"]/tr/td/a[.='TestCity']
@@ -335,9 +280,7 @@ tc_18_1TestCase
 
 tc_19_1TestCase
     Open Browser    https://inventory.edu-netcracker.com/login.jsp    chrome
-    Input Text    //input[@name='j_username']    TestUser11
-    Input Password    //input[@name='j_password']    Password11+
-    Click Button    //input[@type='submit']
+    Login    TestUser11    Password11+
     Click Element    //*[@id="inventory"]/a
     Click Element    //*[@id="j_idt76:tabView:j_idt89_data"]/tr/td/a[.='TestCountry']
     Click Element    //*[@id="j_idt76:tabView:j_idt109_data"]/tr/td/a[.='TestCity']
@@ -353,9 +296,7 @@ tc_19_1TestCase
 
 tc_20_1TestCase
     Open Browser    https://inventory.edu-netcracker.com/login.jsp    chrome
-    Input Text    //input[@name='j_username']    TestUser11
-    Input Password    //input[@name='j_password']    Password11+
-    Click Button    //input[@type='submit']
+    Login    TestUser11    Password11+
     Click Element    xpath=//div[@id='inventory']/a
     Click Element    //*[@id="j_idt76:tabView:j_idt89_data"]/tr/td/a[.='TestCountry']
     Click Element    //*[@id="j_idt76:tabView:j_idt109_data"]/tr/td/a[.='TestCity']
@@ -371,9 +312,7 @@ tc_20_1TestCase
 
 tc_21_1TestCase
     Open Browser    https://inventory.edu-netcracker.com/login.jsp    chrome
-    Input Text    //input[@name='j_username']    TestUser11
-    Input Password    //input[@name='j_password']    Password11+
-    Click Button    //input[@type='submit']
+    Login    TestUser11    Password11+
     Click Element    //*[@id="inventory"]/a
     Click Link    link=TestCountry
     Click Link    link=TestCity
@@ -381,7 +320,7 @@ tc_21_1TestCase
     Click Link    link=Post Terminal (s)
     Sleep    0.5
     Execute Javascript    document.querySelectorAll("#table_header > table > tbody > tr > td:nth-child(1) > a").item(1).click();
-    Input Text    //*[@id="j_idt74:name"]    TestPosTerminal
+    Input Text    //*[@id="j_idt74:name"]    TestPosTerminal1
     Input Text    //*[@id="j_idt74:width"]    100
     Input Text    //*[@id="j_idt74:length"]    100
     Input Text    //*[@id="j_idt74:height"]    100
@@ -409,9 +348,7 @@ tc_21_1TestCase
 
 tc_22_1TestCase
     Open Browser    https://inventory.edu-netcracker.com/login.jsp    chrome
-    Input Text    //input[@name='j_username']    TestUser11
-    Input Password    //input[@name='j_password']    Password11+
-    Click Button    //input[@type='submit']
+    Login    TestUser11    Password11+
     Click Element    //*[@id="inventory"]/a
     Click Link    link=TestCountry
     Click Link    link=TestCity
@@ -440,3 +377,18 @@ tc_22_1TestCase
     Wait Until Page Contains    POS Terminal's length should be more than 0.
     Wait Until Page Contains    POS Terminal's height should be more than 0.
     Close Browser
+
+*** Keywords ***
+Login
+    [Arguments]    ${username}    ${password}
+    Input Text    //input[@name='j_username']    ${username}
+    Input Password    //input[@name='j_password']    ${password}
+    Click Button    //input[@type='submit']
+
+EnterRegistrationData
+    [Arguments]    ${name}    ${password}    ${mail}    ${role}
+    Input Text    //input[@id='registerForm:username']    ${name}
+    Input Password    //input[@id='registerForm:password']    ${password}
+    Input Password    //input[@id='registerForm:confirmPassword']    ${password}
+    Input Text    //input[@id='registerForm:email']    ${mail}
+    Select From List By Value    //select[@id='registerForm:role']    ${role}

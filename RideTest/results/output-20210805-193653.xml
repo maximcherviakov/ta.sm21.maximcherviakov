@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20210805 19:36:54.703" generator="Robot 3.0 (Python 2.7.11 on win32)">
+<suite source="D:\Courses\Practices\TA.FinalPractice.MaximCherviakov\ta.sm21.maximcherviakov\RideTest" id="s1" name="RideTest">
+<suite source="D:\Courses\Practices\TA.FinalPractice.MaximCherviakov\ta.sm21.maximcherviakov\RideTest\RideTest.robot" id="s1-s1" name="RideTest">
+<test id="s1-s1-t1" name="tc_2_1TestCase">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>https://inventory.edu-netcracker.com/pages/registration.xhtml</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20210805 19:36:54.828" level="INFO">Opening browser 'chrome' to base url 'https://inventory.edu-netcracker.com/pages/registration.xhtml'</msg>
+<status status="PASS" endtime="20210805 19:36:57.093" starttime="20210805 19:36:54.828"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>sec</arg>
+</arguments>
+<assign>
+<var>${currentTime}</var>
+</assign>
+<msg timestamp="20210805 19:36:57.094" level="INFO">${currentTime} = 57</msg>
+<status status="PASS" endtime="20210805 19:36:57.095" starttime="20210805 19:36:57.094"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${time}</arg>
+<arg>${currentTime}</arg>
+</arguments>
+<msg timestamp="20210805 19:36:57.096" level="INFO">${time} = 57</msg>
+<status status="PASS" endtime="20210805 19:36:57.096" starttime="20210805 19:36:57.095"></status>
+</kw>
+<kw name="EnterRegistrationData">
+<arguments>
+<arg>TestUser${time}</arg>
+<arg>Password21+</arg>
+<arg>TestUser${time}@test.com</arg>
+<arg>Admin</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:username']</arg>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20210805 19:36:57.097" level="INFO">Typing text 'TestUser57' into text field '//input[@id='registerForm:username']'</msg>
+<status status="PASS" endtime="20210805 19:36:57.188" starttime="20210805 19:36:57.097"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:password']</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210805 19:36:57.189" level="INFO">Typing password into text field '//input[@id='registerForm:password']'</msg>
+<status status="PASS" endtime="20210805 19:36:57.270" starttime="20210805 19:36:57.189"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:confirmPassword']</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210805 19:36:57.271" level="INFO">Typing password into text field '//input[@id='registerForm:confirmPassword']'</msg>
+<status status="PASS" endtime="20210805 19:36:57.349" starttime="20210805 19:36:57.271"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:email']</arg>
+<arg>${mail}</arg>
+</arguments>
+<msg timestamp="20210805 19:36:57.349" level="INFO">Typing text 'TestUser57@test.com' into text field '//input[@id='registerForm:email']'</msg>
+<status status="PASS" endtime="20210805 19:36:57.431" starttime="20210805 19:36:57.349"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>//select[@id='registerForm:role']</arg>
+<arg>${role}</arg>
+</arguments>
+<msg timestamp="20210805 19:36:57.432" level="INFO">Selecting value(s) 'Admin' from list '//select[@id='registerForm:role']'.</msg>
+<status status="PASS" endtime="20210805 19:36:57.493" starttime="20210805 19:36:57.431"></status>
+</kw>
+<status status="PASS" endtime="20210805 19:36:57.494" starttime="20210805 19:36:57.096"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>tc_2_1TestCase(1).png</arg>
+</arguments>
+<msg timestamp="20210805 19:36:57.614" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="tc_2_1TestCase%281%29.png"&gt;&lt;img src="tc_2_1TestCase%281%29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20210805 19:36:57.614" starttime="20210805 19:36:57.494"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>//input[@type='submit']</arg>
+</arguments>
+<msg timestamp="20210805 19:36:57.615" level="INFO">Clicking button '//input[@type='submit']'.</msg>
+<status status="PASS" endtime="20210805 19:36:58.044" starttime="20210805 19:36:57.615"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>You have successfully registered</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" endtime="20210805 19:36:58.056" starttime="20210805 19:36:58.045"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>tc_2_1TestCase(2).png</arg>
+</arguments>
+<msg timestamp="20210805 19:36:58.168" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="tc_2_1TestCase%282%29.png"&gt;&lt;img src="tc_2_1TestCase%282%29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20210805 19:36:58.169" starttime="20210805 19:36:58.056"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20210805 19:36:59.254" starttime="20210805 19:36:58.169"></status>
+</kw>
+<status status="PASS" endtime="20210805 19:36:59.256" critical="yes" starttime="20210805 19:36:54.827"></status>
+</test>
+<test id="s1-s1-t2" name="tc_2_2TestCase">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>https://inventory.edu-netcracker.com/pages/registration.xhtml</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20210805 19:36:59.259" level="INFO">Opening browser 'chrome' to base url 'https://inventory.edu-netcracker.com/pages/registration.xhtml'</msg>
+<status status="PASS" endtime="20210805 19:37:01.420" starttime="20210805 19:36:59.258"></status>
+</kw>
+<kw name="EnterRegistrationData">
+<arguments>
+<arg>TestUser${time}</arg>
+<arg>Password21+</arg>
+<arg>TestUser${time}@test.com</arg>
+<arg>Admin</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:username']</arg>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20210805 19:37:01.422" level="INFO">Typing text 'TestUser57' into text field '//input[@id='registerForm:username']'</msg>
+<status status="PASS" endtime="20210805 19:37:01.511" starttime="20210805 19:37:01.422"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:password']</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210805 19:37:01.512" level="INFO">Typing password into text field '//input[@id='registerForm:password']'</msg>
+<status status="PASS" endtime="20210805 19:37:01.589" starttime="20210805 19:37:01.512"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:confirmPassword']</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210805 19:37:01.590" level="INFO">Typing password into text field '//input[@id='registerForm:confirmPassword']'</msg>
+<status status="PASS" endtime="20210805 19:37:01.667" starttime="20210805 19:37:01.590"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:email']</arg>
+<arg>${mail}</arg>
+</arguments>
+<msg timestamp="20210805 19:37:01.668" level="INFO">Typing text 'TestUser57@test.com' into text field '//input[@id='registerForm:email']'</msg>
+<status status="PASS" endtime="20210805 19:37:01.748" starttime="20210805 19:37:01.667"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>//select[@id='registerForm:role']</arg>
+<arg>${role}</arg>
+</arguments>
+<msg timestamp="20210805 19:37:01.749" level="INFO">Selecting value(s) 'Admin' from list '//select[@id='registerForm:role']'.</msg>
+<status status="PASS" endtime="20210805 19:37:01.811" starttime="20210805 19:37:01.749"></status>
+</kw>
+<status status="PASS" endtime="20210805 19:37:01.811" starttime="20210805 19:37:01.421"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>tc_2_2TestCase(1).png</arg>
+</arguments>
+<msg timestamp="20210805 19:37:01.945" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="tc_2_2TestCase%281%29.png"&gt;&lt;img src="tc_2_2TestCase%281%29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20210805 19:37:01.945" starttime="20210805 19:37:01.812"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>//input[@type='submit']</arg>
+</arguments>
+<msg timestamp="20210805 19:37:01.946" level="INFO">Clicking button '//input[@type='submit']'.</msg>
+<status status="PASS" endtime="20210805 19:37:02.367" starttime="20210805 19:37:01.946"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>User with such login already exists</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" endtime="20210805 19:37:02.381" starttime="20210805 19:37:02.367"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>tc_2_2TestCase(2).png</arg>
+</arguments>
+<msg timestamp="20210805 19:37:02.505" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="tc_2_2TestCase%282%29.png"&gt;&lt;img src="tc_2_2TestCase%282%29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20210805 19:37:02.505" starttime="20210805 19:37:02.381"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20210805 19:37:03.576" starttime="20210805 19:37:02.506"></status>
+</kw>
+<status status="PASS" endtime="20210805 19:37:03.578" critical="yes" starttime="20210805 19:36:59.258"></status>
+</test>
+<status status="PASS" endtime="20210805 19:37:03.581" starttime="20210805 19:36:54.738"></status>
+</suite>
+<status status="PASS" endtime="20210805 19:37:03.588" starttime="20210805 19:36:54.718"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="RideTest" pass="2">RideTest</stat>
+<stat fail="0" id="s1-s1" name="RideTest" pass="2">RideTest.RideTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

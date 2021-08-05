@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20210805 19:18:47.803" generator="Robot 3.0 (Python 2.7.11 on win32)">
+<suite source="D:\Courses\Practices\TA.FinalPractice.MaximCherviakov\ta.sm21.maximcherviakov\RideTest" id="s1" name="RideTest">
+<suite source="D:\Courses\Practices\TA.FinalPractice.MaximCherviakov\ta.sm21.maximcherviakov\RideTest\RideTest.robot" id="s1-s1" name="RideTest">
+<test id="s1-s1-t1" name="tc_2_1TestCase">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>https://inventory.edu-netcracker.com/pages/registration.xhtml</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20210805 19:18:47.928" level="INFO">Opening browser 'chrome' to base url 'https://inventory.edu-netcracker.com/pages/registration.xhtml'</msg>
+<status status="PASS" endtime="20210805 19:18:50.222" starttime="20210805 19:18:47.928"></status>
+</kw>
+<kw name="EnterRegistrationData">
+<arguments>
+<arg>TestUser21</arg>
+<arg>Password21+</arg>
+<arg>TestUser21@test.com</arg>
+<arg>Admin</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:username']</arg>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20210805 19:18:50.224" level="INFO">Typing text 'TestUser21' into text field '//input[@id='registerForm:username']'</msg>
+<status status="PASS" endtime="20210805 19:18:50.316" starttime="20210805 19:18:50.224"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:password']</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210805 19:18:50.316" level="INFO">Typing password into text field '//input[@id='registerForm:password']'</msg>
+<status status="PASS" endtime="20210805 19:18:50.396" starttime="20210805 19:18:50.316"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:confirmPassword']</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210805 19:18:50.397" level="INFO">Typing password into text field '//input[@id='registerForm:confirmPassword']'</msg>
+<status status="PASS" endtime="20210805 19:18:50.472" starttime="20210805 19:18:50.396"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:email']</arg>
+<arg>${mail}</arg>
+</arguments>
+<msg timestamp="20210805 19:18:50.473" level="INFO">Typing text 'TestUser21@test.com' into text field '//input[@id='registerForm:email']'</msg>
+<status status="PASS" endtime="20210805 19:18:50.550" starttime="20210805 19:18:50.473"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>//select[@id='registerForm:role']</arg>
+<arg>${role}</arg>
+</arguments>
+<msg timestamp="20210805 19:18:50.551" level="INFO">Selecting value(s) 'Admin' from list '//select[@id='registerForm:role']'.</msg>
+<status status="PASS" endtime="20210805 19:18:50.610" starttime="20210805 19:18:50.550"></status>
+</kw>
+<status status="PASS" endtime="20210805 19:18:50.611" starttime="20210805 19:18:50.223"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>tc_2_1TestCase(1).png</arg>
+</arguments>
+<msg timestamp="20210805 19:18:50.726" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="tc_2_1TestCase%281%29.png"&gt;&lt;img src="tc_2_1TestCase%281%29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20210805 19:18:50.726" starttime="20210805 19:18:50.611"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>//input[@type='submit']</arg>
+</arguments>
+<msg timestamp="20210805 19:18:50.726" level="INFO">Clicking button '//input[@type='submit']'.</msg>
+<status status="PASS" endtime="20210805 19:18:51.154" starttime="20210805 19:18:50.726"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>You have successfully registered</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" endtime="20210805 19:18:51.167" starttime="20210805 19:18:51.155"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>tc_2_1TestCase(2).png</arg>
+</arguments>
+<msg timestamp="20210805 19:18:51.294" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="tc_2_1TestCase%282%29.png"&gt;&lt;img src="tc_2_1TestCase%282%29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20210805 19:18:51.294" starttime="20210805 19:18:51.168"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20210805 19:18:52.387" starttime="20210805 19:18:51.294"></status>
+</kw>
+<status status="PASS" endtime="20210805 19:18:52.387" critical="yes" starttime="20210805 19:18:47.928"></status>
+</test>
+<status status="PASS" endtime="20210805 19:18:52.387" starttime="20210805 19:18:47.834"></status>
+</suite>
+<status status="PASS" endtime="20210805 19:18:52.387" starttime="20210805 19:18:47.818"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="RideTest" pass="1">RideTest</stat>
+<stat fail="0" id="s1-s1" name="RideTest" pass="1">RideTest.RideTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

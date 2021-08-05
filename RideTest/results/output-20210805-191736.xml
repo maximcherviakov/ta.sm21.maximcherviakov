@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20210805 19:17:38.180" generator="Robot 3.0 (Python 2.7.11 on win32)">
+<suite source="D:\Courses\Practices\TA.FinalPractice.MaximCherviakov\ta.sm21.maximcherviakov\RideTest" id="s1" name="RideTest">
+<suite source="D:\Courses\Practices\TA.FinalPractice.MaximCherviakov\ta.sm21.maximcherviakov\RideTest\RideTest.robot" id="s1-s1" name="RideTest">
+<test id="s1-s1-t1" name="tc_1_1TestCase">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>https://inventory.edu-netcracker.com/pages/registration.xhtml</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20210805 19:17:39.339" level="INFO">Opening browser 'chrome' to base url 'https://inventory.edu-netcracker.com/pages/registration.xhtml'</msg>
+<status status="PASS" endtime="20210805 19:17:41.641" starttime="20210805 19:17:39.339"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>sec</arg>
+</arguments>
+<assign>
+<var>${currentTime}</var>
+</assign>
+<msg timestamp="20210805 19:17:41.642" level="INFO">${currentTime} = 41</msg>
+<status status="PASS" endtime="20210805 19:17:41.642" starttime="20210805 19:17:41.642"></status>
+</kw>
+<kw name="EnterRegistrationData">
+<arguments>
+<arg>TestAdminUser${currentTime}</arg>
+<arg>Password11+</arg>
+<arg>TestAdminUser${currentTime}@test.com</arg>
+<arg>Admin</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:username']</arg>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20210805 19:17:41.643" level="INFO">Typing text 'TestAdminUser41' into text field '//input[@id='registerForm:username']'</msg>
+<status status="PASS" endtime="20210805 19:17:41.729" starttime="20210805 19:17:41.643"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:password']</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210805 19:17:41.729" level="INFO">Typing password into text field '//input[@id='registerForm:password']'</msg>
+<status status="PASS" endtime="20210805 19:17:41.820" starttime="20210805 19:17:41.729"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:confirmPassword']</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210805 19:17:41.820" level="INFO">Typing password into text field '//input[@id='registerForm:confirmPassword']'</msg>
+<status status="PASS" endtime="20210805 19:17:41.897" starttime="20210805 19:17:41.820"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:email']</arg>
+<arg>${mail}</arg>
+</arguments>
+<msg timestamp="20210805 19:17:41.897" level="INFO">Typing text 'TestAdminUser41@test.com' into text field '//input[@id='registerForm:email']'</msg>
+<status status="PASS" endtime="20210805 19:17:41.977" starttime="20210805 19:17:41.897"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>//select[@id='registerForm:role']</arg>
+<arg>${role}</arg>
+</arguments>
+<msg timestamp="20210805 19:17:41.977" level="INFO">Selecting value(s) 'Admin' from list '//select[@id='registerForm:role']'.</msg>
+<status status="PASS" endtime="20210805 19:17:42.047" starttime="20210805 19:17:41.977"></status>
+</kw>
+<status status="PASS" endtime="20210805 19:17:42.047" starttime="20210805 19:17:41.642"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>tc_1_1TestCase(1).png</arg>
+</arguments>
+<msg timestamp="20210805 19:17:42.174" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="tc_1_1TestCase%281%29.png"&gt;&lt;img src="tc_1_1TestCase%281%29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20210805 19:17:42.175" starttime="20210805 19:17:42.048"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>//input[@type='submit']</arg>
+</arguments>
+<msg timestamp="20210805 19:17:42.175" level="INFO">Clicking button '//input[@type='submit']'.</msg>
+<status status="PASS" endtime="20210805 19:17:42.577" starttime="20210805 19:17:42.175"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>You have successfully registered</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" endtime="20210805 19:17:42.590" starttime="20210805 19:17:42.577"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>tc_1_1TestCase(2).png</arg>
+</arguments>
+<msg timestamp="20210805 19:17:42.693" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="tc_1_1TestCase%282%29.png"&gt;&lt;img src="tc_1_1TestCase%282%29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20210805 19:17:42.693" starttime="20210805 19:17:42.590"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20210805 19:17:43.787" starttime="20210805 19:17:42.693"></status>
+</kw>
+<status status="PASS" endtime="20210805 19:17:43.789" critical="yes" starttime="20210805 19:17:39.339"></status>
+</test>
+<test id="s1-s1-t2" name="tc_2_1TestCase">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>https://inventory.edu-netcracker.com/pages/registration.xhtml</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20210805 19:17:43.792" level="INFO">Opening browser 'chrome' to base url 'https://inventory.edu-netcracker.com/pages/registration.xhtml'</msg>
+<status status="PASS" endtime="20210805 19:17:46.019" starttime="20210805 19:17:43.792"></status>
+</kw>
+<kw name="EnterRegistrationData">
+<arguments>
+<arg>TestUser21</arg>
+<arg>Password21+</arg>
+<arg>TestUser21@test.com</arg>
+<arg>Admin</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:username']</arg>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20210805 19:17:46.020" level="INFO">Typing text 'TestUser21' into text field '//input[@id='registerForm:username']'</msg>
+<status status="PASS" endtime="20210805 19:17:46.111" starttime="20210805 19:17:46.020"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:password']</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210805 19:17:46.112" level="INFO">Typing password into text field '//input[@id='registerForm:password']'</msg>
+<status status="PASS" endtime="20210805 19:17:46.192" starttime="20210805 19:17:46.111"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:confirmPassword']</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210805 19:17:46.193" level="INFO">Typing password into text field '//input[@id='registerForm:confirmPassword']'</msg>
+<status status="PASS" endtime="20210805 19:17:46.266" starttime="20210805 19:17:46.192"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:email']</arg>
+<arg>${mail}</arg>
+</arguments>
+<msg timestamp="20210805 19:17:46.267" level="INFO">Typing text 'TestUser21@test.com' into text field '//input[@id='registerForm:email']'</msg>
+<status status="PASS" endtime="20210805 19:17:46.351" starttime="20210805 19:17:46.266"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>//select[@id='registerForm:role']</arg>
+<arg>${role}</arg>
+</arguments>
+<msg timestamp="20210805 19:17:46.352" level="INFO">Selecting value(s) 'Admin' from list '//select[@id='registerForm:role']'.</msg>
+<status status="PASS" endtime="20210805 19:17:46.413" starttime="20210805 19:17:46.351"></status>
+</kw>
+<status status="PASS" endtime="20210805 19:17:46.413" starttime="20210805 19:17:46.019"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>tc_2_1TestCase(1).png</arg>
+</arguments>
+<msg timestamp="20210805 19:17:46.558" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="tc_2_1TestCase%281%29.png"&gt;&lt;img src="tc_2_1TestCase%281%29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20210805 19:17:46.558" starttime="20210805 19:17:46.414"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>//input[@type='submit']</arg>
+</arguments>
+<msg timestamp="20210805 19:17:46.559" level="INFO">Clicking button '//input[@type='submit']'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210805 19:17:52.671" level="FAIL">WebDriverException: Message: u'chrome not reachable\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<status status="FAIL" endtime="20210805 19:17:52.671" starttime="20210805 19:17:48.604"></status>
+</kw>
+<msg timestamp="20210805 19:17:52.672" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: u'chrome not reachable\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<msg timestamp="20210805 19:17:52.686" level="FAIL">WebDriverException: Message: u'chrome not reachable\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<status status="FAIL" endtime="20210805 19:17:52.686" starttime="20210805 19:17:46.559"></status>
+</kw>
+<status status="FAIL" endtime="20210805 19:17:52.687" critical="yes" starttime="20210805 19:17:43.791">WebDriverException: Message: u'chrome not reachable\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </status>
+</test>
+<test id="s1-s1-t3" name="tc_2_2TestCase">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>https://inventory.edu-netcracker.com/pages/registration.xhtml</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20210805 19:17:52.691" level="INFO">Opening browser 'chrome' to base url 'https://inventory.edu-netcracker.com/pages/registration.xhtml'</msg>
+<status status="PASS" endtime="20210805 19:17:54.904" starttime="20210805 19:17:52.691"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:username']</arg>
+<arg>TestUser21</arg>
+</arguments>
+<msg timestamp="20210805 19:17:54.905" level="INFO">Typing text 'TestUser21' into text field '//input[@id='registerForm:username']'</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210805 19:17:54.954" level="FAIL">NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<status status="FAIL" endtime="20210805 19:17:54.954" starttime="20210805 19:17:54.948"></status>
+</kw>
+<msg timestamp="20210805 19:17:54.955" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<msg timestamp="20210805 19:17:54.957" level="FAIL">NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<status status="FAIL" endtime="20210805 19:17:54.957" starttime="20210805 19:17:54.905"></status>
+</kw>
+<status status="FAIL" endtime="20210805 19:17:54.957" critical="yes" starttime="20210805 19:17:52.689">NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </status>
+</test>
+<test id="s1-s1-t4" name="tc_2_3TestCase">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>https://inventory.edu-netcracker.com/pages/registration.xhtml</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20210805 19:17:54.959" level="INFO">Opening browser 'chrome' to base url 'https://inventory.edu-netcracker.com/pages/registration.xhtml'</msg>
+<status status="PASS" endtime="20210805 19:17:57.030" starttime="20210805 19:17:54.958"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:username']</arg>
+<arg>Test3</arg>
+</arguments>
+<msg timestamp="20210805 19:17:57.031" level="INFO">Typing text 'Test3' into text field '//input[@id='registerForm:username']'</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210805 19:17:57.035" level="FAIL">NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<status status="FAIL" endtime="20210805 19:17:57.036" starttime="20210805 19:17:57.032"></status>
+</kw>
+<msg timestamp="20210805 19:17:57.036" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<msg timestamp="20210805 19:17:57.037" level="FAIL">NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<status status="FAIL" endtime="20210805 19:17:57.037" starttime="20210805 19:17:57.030"></status>
+</kw>
+<status status="FAIL" endtime="20210805 19:17:57.038" critical="yes" starttime="20210805 19:17:54.958">NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </status>
+</test>
+<test id="s1-s1-t5" name="tc_3_1TestCase">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>https://inventory.edu-netcracker.com/pages/registration.xhtml</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20210805 19:17:57.040" level="INFO">Opening browser 'chrome' to base url 'https://inventory.edu-netcracker.com/pages/registration.xhtml'</msg>
+<status status="PASS" endtime="20210805 19:17:58.379" starttime="20210805 19:17:57.040"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:username']</arg>
+<arg>TestUser31</arg>
+</arguments>
+<msg timestamp="20210805 19:17:58.381" level="INFO">Typing text 'TestUser31' into text field '//input[@id='registerForm:username']'</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210805 19:17:58.389" level="FAIL">NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<status status="FAIL" endtime="20210805 19:17:58.389" starttime="20210805 19:17:58.384"></status>
+</kw>
+<msg timestamp="20210805 19:17:58.390" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<msg timestamp="20210805 19:17:58.391" level="FAIL">NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<status status="FAIL" endtime="20210805 19:17:58.391" starttime="20210805 19:17:58.380"></status>
+</kw>
+<status status="FAIL" endtime="20210805 19:17:58.391" critical="yes" starttime="20210805 19:17:57.039">NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </status>
+</test>
+<test id="s1-s1-t6" name="tc_3_2TestCase">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>https://inventory.edu-netcracker.com/pages/registration.xhtml</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20210805 19:17:58.392" level="INFO">Opening browser 'chrome' to base url 'https://inventory.edu-netcracker.com/pages/registration.xhtml'</msg>
+<status status="PASS" endtime="20210805 19:18:00.507" starttime="20210805 19:17:58.392"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:username']</arg>
+<arg>TestUser32</arg>
+</arguments>
+<msg timestamp="20210805 19:18:00.508" level="INFO">Typing text 'TestUser32' into text field '//input[@id='registerForm:username']'</msg>
+<status status="PASS" endtime="20210805 19:18:00.594" starttime="20210805 19:18:00.508"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:password']</arg>
+<arg>MyPassword+</arg>
+</arguments>
+<msg timestamp="20210805 19:18:00.595" level="INFO">Typing password into text field '//input[@id='registerForm:password']'</msg>
+<status status="PASS" endtime="20210805 19:18:00.670" starttime="20210805 19:18:00.595"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:confirmPassword']</arg>
+<arg>MyPassword+</arg>
+</arguments>
+<msg timestamp="20210805 19:18:00.671" level="INFO">Typing password into text field '//input[@id='registerForm:confirmPassword']'</msg>
+<status status="PASS" endtime="20210805 19:18:00.740" starttime="20210805 19:18:00.670"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:email']</arg>
+<arg>TestUser32@test.com</arg>
+</arguments>
+<msg timestamp="20210805 19:18:00.741" level="INFO">Typing text 'TestUser32@test.com' into text field '//input[@id='registerForm:email']'</msg>
+<status status="PASS" endtime="20210805 19:18:00.816" starttime="20210805 19:18:00.741"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>tc_3_2TestCase(1).png</arg>
+</arguments>
+<msg timestamp="20210805 19:18:00.928" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="tc_3_2TestCase%281%29.png"&gt;&lt;img src="tc_3_2TestCase%281%29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20210805 19:18:00.928" starttime="20210805 19:18:00.817"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>//input[@type='submit']</arg>
+</arguments>
+<msg timestamp="20210805 19:18:00.928" level="INFO">Clicking button '//input[@type='submit']'.</msg>
+<status status="PASS" endtime="20210805 19:18:01.336" starttime="20210805 19:18:00.928"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Please fill out the form once again</arg>
+<arg>10s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210805 19:18:05.150" level="FAIL">NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<status status="FAIL" endtime="20210805 19:18:05.150" starttime="20210805 19:18:05.150"></status>
+</kw>
+<msg timestamp="20210805 19:18:05.150" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<msg timestamp="20210805 19:18:05.166" level="FAIL">NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<status status="FAIL" endtime="20210805 19:18:05.166" starttime="20210805 19:18:01.337"></status>
+</kw>
+<status status="FAIL" endtime="20210805 19:18:05.166" critical="yes" starttime="20210805 19:17:58.392">NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </status>
+</test>
+<test id="s1-s1-t7" name="tc_3_3TestCase">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>https://inventory.edu-netcracker.com/pages/registration.xhtml</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20210805 19:18:05.166" level="INFO">Opening browser 'chrome' to base url 'https://inventory.edu-netcracker.com/pages/registration.xhtml'</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210805 19:18:08.996" level="FAIL">WebDriverException: Message: u'chrome not reachable\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<status status="FAIL" endtime="20210805 19:18:08.996" starttime="20210805 19:18:06.946"></status>
+</kw>
+<msg timestamp="20210805 19:18:08.996" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: u'chrome not reachable\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<msg timestamp="20210805 19:18:08.996" level="FAIL">WebDriverException: Message: u'unknown error: cannot determine loading status\nfrom disconnected: received Inspector.detached event\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<status status="FAIL" endtime="20210805 19:18:08.996" starttime="20210805 19:18:05.166"></status>
+</kw>
+<status status="FAIL" endtime="20210805 19:18:08.996" critical="yes" starttime="20210805 19:18:05.166">WebDriverException: Message: u'unknown error: cannot determine loading status\nfrom disconnected: received Inspector.detached event\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </status>
+</test>
+<test id="s1-s1-t8" name="tc_3_4TestCase">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>https://inventory.edu-netcracker.com/pages/registration.xhtml</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20210805 19:18:08.996" level="INFO">Opening browser 'chrome' to base url 'https://inventory.edu-netcracker.com/pages/registration.xhtml'</msg>
+<status status="PASS" endtime="20210805 19:18:11.136" starttime="20210805 19:18:08.996"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:username']</arg>
+<arg>TestUser34</arg>
+</arguments>
+<msg timestamp="20210805 19:18:11.138" level="INFO">Typing text 'TestUser34' into text field '//input[@id='registerForm:username']'</msg>
+<status status="PASS" endtime="20210805 19:18:11.228" starttime="20210805 19:18:11.137"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:password']</arg>
+<arg>MyPassword34</arg>
+</arguments>
+<msg timestamp="20210805 19:18:11.230" level="INFO">Typing password into text field '//input[@id='registerForm:password']'</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210805 19:18:11.237" level="FAIL">NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<status status="FAIL" endtime="20210805 19:18:11.237" starttime="20210805 19:18:11.232"></status>
+</kw>
+<msg timestamp="20210805 19:18:11.237" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<msg timestamp="20210805 19:18:11.239" level="FAIL">NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<status status="FAIL" endtime="20210805 19:18:11.239" starttime="20210805 19:18:11.229"></status>
+</kw>
+<status status="FAIL" endtime="20210805 19:18:11.240" critical="yes" starttime="20210805 19:18:08.996">NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </status>
+</test>
+<test id="s1-s1-t9" name="tc_4_1TestCase">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>https://inventory.edu-netcracker.com/pages/registration.xhtml</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20210805 19:18:11.242" level="INFO">Opening browser 'chrome' to base url 'https://inventory.edu-netcracker.com/pages/registration.xhtml'</msg>
+<status status="PASS" endtime="20210805 19:18:13.416" starttime="20210805 19:18:11.242"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:username']</arg>
+<arg>TestUser451</arg>
+</arguments>
+<msg timestamp="20210805 19:18:13.416" level="INFO">Typing text 'TestUser451' into text field '//input[@id='registerForm:username']'</msg>
+<status status="PASS" endtime="20210805 19:18:13.501" starttime="20210805 19:18:13.416"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:password']</arg>
+<arg>MyPassword451+</arg>
+</arguments>
+<msg timestamp="20210805 19:18:13.502" level="INFO">Typing password into text field '//input[@id='registerForm:password']'</msg>
+<status status="PASS" endtime="20210805 19:18:13.589" starttime="20210805 19:18:13.501"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:confirmPassword']</arg>
+<arg>MyPassword451+</arg>
+</arguments>
+<msg timestamp="20210805 19:18:13.589" level="INFO">Typing password into text field '//input[@id='registerForm:confirmPassword']'</msg>
+<status status="PASS" endtime="20210805 19:18:13.663" starttime="20210805 19:18:13.589"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:email']</arg>
+<arg>TestUser451@test.com</arg>
+</arguments>
+<msg timestamp="20210805 19:18:13.663" level="INFO">Typing text 'TestUser451@test.com' into text field '//input[@id='registerForm:email']'</msg>
+<status status="PASS" endtime="20210805 19:18:13.742" starttime="20210805 19:18:13.663"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>tc_4_1TestCase(1).png</arg>
+</arguments>
+<msg timestamp="20210805 19:18:13.863" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="tc_4_1TestCase%281%29.png"&gt;&lt;img src="tc_4_1TestCase%281%29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20210805 19:18:13.863" starttime="20210805 19:18:13.742"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>xpath=//input[@id='registerForm:hide']@onclick</arg>
+</arguments>
+<assign>
+<var>${showPassword}</var>
+</assign>
+<msg timestamp="20210805 19:18:13.879" level="INFO">${showPassword} = showPassword(this.form)</msg>
+<status status="PASS" endtime="20210805 19:18:13.879" starttime="20210805 19:18:13.863"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${showPassword}</arg>
+<arg>showPassword(this.form)</arg>
+</arguments>
+<status status="PASS" endtime="20210805 19:18:13.879" starttime="20210805 19:18:13.879"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20210805 19:18:14.954" starttime="20210805 19:18:13.879"></status>
+</kw>
+<status status="PASS" endtime="20210805 19:18:14.954" critical="yes" starttime="20210805 19:18:11.241"></status>
+</test>
+<test id="s1-s1-t10" name="tc_5_1TestCase">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>https://inventory.edu-netcracker.com/pages/registration.xhtml</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20210805 19:18:14.954" level="INFO">Opening browser 'chrome' to base url 'https://inventory.edu-netcracker.com/pages/registration.xhtml'</msg>
+<status status="PASS" endtime="20210805 19:18:17.042" starttime="20210805 19:18:14.954"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:username']</arg>
+<arg>TestUser451</arg>
+</arguments>
+<msg timestamp="20210805 19:18:17.043" level="INFO">Typing text 'TestUser451' into text field '//input[@id='registerForm:username']'</msg>
+<status status="PASS" endtime="20210805 19:18:17.135" starttime="20210805 19:18:17.042"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:password']</arg>
+<arg>MyPassword451+</arg>
+</arguments>
+<msg timestamp="20210805 19:18:17.136" level="INFO">Typing password into text field '//input[@id='registerForm:password']'</msg>
+<status status="PASS" endtime="20210805 19:18:17.227" starttime="20210805 19:18:17.135"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:confirmPassword']</arg>
+<arg>MyPassword451+</arg>
+</arguments>
+<msg timestamp="20210805 19:18:17.227" level="INFO">Typing password into text field '//input[@id='registerForm:confirmPassword']'</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210805 19:18:17.229" level="FAIL">NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<status status="FAIL" endtime="20210805 19:18:17.229" starttime="20210805 19:18:17.229"></status>
+</kw>
+<msg timestamp="20210805 19:18:17.229" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<msg timestamp="20210805 19:18:17.229" level="FAIL">NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<status status="FAIL" endtime="20210805 19:18:17.229" starttime="20210805 19:18:17.227"></status>
+</kw>
+<status status="FAIL" endtime="20210805 19:18:17.229" critical="yes" starttime="20210805 19:18:14.954">NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </status>
+</test>
+<test id="s1-s1-t11" name="tc_6_1TestCase">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>https://inventory.edu-netcracker.com/pages/registration.xhtml</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20210805 19:18:17.229" level="INFO">Opening browser 'chrome' to base url 'https://inventory.edu-netcracker.com/pages/registration.xhtml'</msg>
+<status status="PASS" endtime="20210805 19:18:19.381" starttime="20210805 19:18:17.229"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:username']</arg>
+<arg>TestUser61</arg>
+</arguments>
+<msg timestamp="20210805 19:18:19.382" level="INFO">Typing text 'TestUser61' into text field '//input[@id='registerForm:username']'</msg>
+<status status="PASS" endtime="20210805 19:18:19.470" starttime="20210805 19:18:19.382"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id='registerForm:password']</arg>
+<arg>MyPassword61+</arg>
+</arguments>
+<msg timestamp="20210805 19:18:19.471" level="INFO">Typing password into text field '//input[@id='registerForm:password']'</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210805 19:18:19.477" level="FAIL">NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<status status="FAIL" endtime="20210805 19:18:19.478" starttime="20210805 19:18:19.473"></status>
+</kw>
+<msg timestamp="20210805 19:18:19.478" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<msg timestamp="20210805 19:18:19.485" level="FAIL">IOError: [Errno 22] Invalid argument</msg>
+<status status="FAIL" endtime="20210805 19:18:19.486" starttime="20210805 19:18:19.471"></status>
+</kw>
+<errors>
+<msg timestamp="20210805 19:17:52.672" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: u'chrome not reachable\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<msg timestamp="20210805 19:17:54.955" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<msg timestamp="20210805 19:17:57.036" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<msg timestamp="20210805 19:17:58.390" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<msg timestamp="20210805 19:18:05.150" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<msg timestamp="20210805 19:18:08.996" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: u'chrome not reachable\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<msg timestamp="20210805 19:18:11.237" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+<msg timestamp="20210805 19:18:17.229" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: u'no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=92.0.4515.131)\n  (Driver info: chromedriver=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}),platform=Windows NT 10.0.17763 x86_64)' </msg>
+</errors>
+</robot>
